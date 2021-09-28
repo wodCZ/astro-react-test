@@ -1,6 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from "react";
 
-export default function Counter({ children, count: initialCount }) {
+type Props = {
+  count: number;
+  children: JSX.Element;
+};
+
+export default function Counter({ children, count: initialCount }: Props) {
   const [count, setCount] = useState(initialCount);
   const add = () => setCount((i) => i + 1);
   const subtract = () => setCount((i) => i - 1);
